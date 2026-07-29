@@ -1,0 +1,20 @@
+{
+  "name": "atithi",
+  "version": "1.0.0",
+  "description": "ATITHI – An Indian-inspired vacation rental platform connecting hosts and travelers with seamless booking experiences.",
+  "repository": {
+    "type": "git",
+    "url": "\"https://github.com/Saurya1729/ATITHI.git\""
+  },
+  "license": "MIT",
+  "author": "Saurabh Hasabe",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.8.1"
+  }
+}
