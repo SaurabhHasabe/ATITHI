@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATITHI | Where Every Stay Feels Like Home</title>
+</head>
+<body>  
+
+    <h3>Create Your New Listing</h3>
+
+    <form method="POST" action="/listings">
+        <input placeholder="Enter Title" name="listing[title]" type="text"> <br> <br>
+        <input placeholder="Enter Image URL / Link" name="listing[image[url]]" type="text"> <br> <br>
+        <textarea name="listing[description]" placeholder="Enter Description"></textarea> <br> <br>
+        <input placeholder="Enter Price" name="listing[price]" type="number"> <br> <br>
+        <input placeholder="Enter Country" name="listing[country]" type="text"> <br> <br>
+        <input placeholder="Enter Location" name="listing[location]" type="text"> <br> <br>
+        <button>Create</button>
+    </form>
+    
+</body>
+</html>
