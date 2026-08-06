@@ -5,7 +5,12 @@
     <div class="col-8 offset-2">
       <h3>Create Your New Listing</h3>
 
-      <form method="POST" action="/listings">
+      <form
+        method="POST"
+        action="/listings"
+        class="needs-validation"
+        novalidate
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input
@@ -13,7 +18,9 @@
             name="listing[title]"
             type="text"
             class="form-control"
+            required
           />
+          <div class="valid-feedback">Title Looks Good !</div>
         </div>
 
         <div class="mb-3">
@@ -22,14 +29,16 @@
             name="listing[description]"
             placeholder="Enter Description"
             class="form-control"
+            required
           ></textarea>
+          <div class="invalid-feedback">Description should be valid !</div>
         </div>
 
         <div class="mb-3">
           <label for="image" class="form-label">Image Link</label>
           <input
             placeholder="Enter Image URL / Link"
-            name="listing[image[url]]"
+            name="listing[image][url]"
             type="text"
             class="form-control"
           />
@@ -43,7 +52,9 @@
               name="listing[price]"
               type="number"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">Price should be valid !</div>
           </div>
 
           <div class="mb-3 col-md-8">
@@ -53,7 +64,9 @@
               name="listing[country]"
               type="text"
               class="form-control"
+              required
             />
+            <div class="invalid-feedback">Country should be valid !</div>
           </div>
         </div>
 
@@ -64,7 +77,9 @@
             name="listing[location]"
             type="text"
             class="form-control"
+            required
           />
+          <div class="invalid-feedback">Location should be valid !</div>
         </div>
 
         <button class="btn btn-dark add-btn mt-3">Add</button>
