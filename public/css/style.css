@@ -71,7 +71,7 @@ body {
 }
 
 .card-body {
-  padding: 0;
+  padding: 0 !important;
 }
 
 .card-text {
@@ -114,7 +114,7 @@ body {
   display: flex;
 }
 
-.shoe-card {
+.show-card {
   padding-left: 0;
   padding-right: 0;
 }
