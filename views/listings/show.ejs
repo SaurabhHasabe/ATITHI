@@ -13,33 +13,34 @@
         alt="<%= listing.image.filename %>"
       />
       <div class="card-body">
-        <p class="card-text">
-          <%= listing.description %> <br />
-          &#8377;<%= listing.price.toLocaleString("en-In") %> /night<br />
-          <i><%= listing.location %></i> <br />
-          <%= listing.country %>
-        </p>
+        <p class="card-text">Owned By <i><%=listing.owner.username%></i></p>
+        <p class="card-text"> <%= listing.description %> </p>
+        <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-In") %> /night</p>
+        <p class="card-text"><i><%= listing.location %></i> </p>
+        <p class="card-text"><%= listing.country %></p>
       </div>
     </div>
 
     <br />
 
-    <div class="btns">
-      <a
-        href="/listings/<%=listing._id%>/edit"
-        class="btn btn-dark col-1 offset-3 edit-btn"
-        >Edit</a
-      >
+    <% if(currUser && currUser._id.equals(listing.owner._id)) { %>
+      <div class="btns">
+        <a
+          href="/listings/<%=listing._id%>/edit"
+          class="btn btn-dark col-1 offset-3 edit-btn"
+          >Edit</a
+        >
 
-      <form method="POST" action="/listings/<%=listing._id %>?_method=DELETE">
-        <button class="btn btn-dark offset-4">Delete</button>
-      </form>
-    </div>
-
+        <form method="POST" action="/listings/<%=listing._id %>?_method=DELETE">
+          <button class="btn btn-dark offset-4">Delete</button>
+        </form>
+      </div>
+    <% } %>
     <br />
 
     <div class="col-8 offset-3 mt-3 mb-3">
       <hr />
+      <% if(currUser) { %>
       <h3>Leave a Review</h3>
 
       <form
@@ -77,8 +78,7 @@
 
         <button class="btn btn-outline-dark">Post</button>
       </form>
-
-      <hr />
+      <% } %>
 
       <p><b>All Reviews</b></p>
 
@@ -86,7 +86,7 @@
         <% for(review of listing.reviews) { %>
         <div class="card border col-5 mt-3 ms-2">
           <div class="card-body">
-            <h5 class="card-title">Unknown</h5>
+            <h5 class="card-title">@<%=review.author.username%></h5>
             <p class="card-text"><%=review.comment%></p>
             <p class="card-text"><%=review.rating%> starts</p>
 
