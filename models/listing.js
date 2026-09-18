@@ -9,20 +9,14 @@ const listingSchema = new Schema({
   },
   description: String,
   image: {
-    filename: {
-      type: String,
-      default: "listingimage",
-    },
     url: {
       type: String,
       default:
         "https://images.unsplash.com/photo-1782392487647-7fee9715d1f5?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      set: (v) => {
-        if (!v || v.trim() === "") {
-          return "https://images.unsplash.com/photo-1782392487647-7fee9715d1f5?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
-        }
-        return v;
-      },
+    },
+    filename: {
+      type: String,
+      default: "listingimage",
     },
   },
   price: Number,
